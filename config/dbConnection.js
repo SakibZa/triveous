@@ -69,6 +69,15 @@ connection.connect((err) => {
           FOREIGN KEY (user_id) REFERENCES users(id),
           FOREIGN KEY (product_id) REFERENCES products(id)
       );
+        `,
+        `
+        CREATE TABLE IF NOT EXISTS orders (
+            id INT AUTO_INCREMENT PRIMARY KEY,
+            user_id INT NOT NULL,
+            total_amount DECIMAL(10, 2) NOT NULL,
+            order_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+            FOREIGN KEY (user_id) REFERENCES users(id)
+        );
         `
     ];
 

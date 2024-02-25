@@ -58,6 +58,12 @@ const httpConstants = {
     UPDATE_CART_DETAILS : '/update-cart-details/:userID/:productID',
     REMOVE_CART_ITEM : '/remove-cart-details/:userID/:productID',
 
+    //for order endpoints
+
+    ORDER_PLACE : '/order-place/:userID',
+    GET_ORDER_DETAILS : '/get-order-details/:userID',
+    GET_ORDER_DETAILS_BY_ID : '/get-order-details-by-id/:orderID',
+
   };
   const apiSuccessMessage = {
     FETCH_SUCCESS:"Data Fetched Successfully",

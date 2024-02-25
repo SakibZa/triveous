@@ -1,5 +1,4 @@
 const express = require("express");
-const routes = require("./category");
 const router = express.Router();
 
 /* Routes for registration the user and login the user   */
@@ -18,5 +17,9 @@ router.use('/product', require('./product'));
 
 router.use('/cart', require('./cart'));
 
+
+/*Routes for order */
+
+router.use('/order', require('./order'));
 
 module.exports = router;
