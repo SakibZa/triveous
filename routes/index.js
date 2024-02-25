@@ -5,6 +5,8 @@ const router = express.Router();
 
 router.use('/user', require('./user'));
 
+/* Routes for categories  */
 
+router.use('/category', require('./category'));
 
 module.exports = router;

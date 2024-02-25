@@ -37,7 +37,13 @@ const httpConstants = {
   const apiEndpoints = {
     //for User endpoints
    REGISTER: '/register',
-    LOGIN: '/login'
+    LOGIN: '/login',
+    
+    //For category endpoints
+    ADD_CATEGORY :'/add-category',
+    GET_LIST_CATEGORTIES : '/get-list-categories',
+    UPDATE_CATEGORY :'/update-category/:id',
+
   };
   const apiSuccessMessage = {
     FETCH_SUCCESS:"Data Fetched Successfully",

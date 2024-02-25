@@ -34,17 +34,14 @@ class LHTLogger {
     functionName,
     message,
     payload = {},
-    errorStack = "",
     devAlias = ""
   ) {
-    const errorOrigin = LHTLogger.parseErrorStack(errorStack);
     LHTLogger.log(
       functionName,
       message,
       payload,
       devAlias,
       httpConstants.LOG_LEVEL_TYPE.ERROR,
-      errorOrigin
     );
   }
 
@@ -73,5 +70,6 @@ class LHTLogger {
         console.log(logString);
     }
   }
+
 }
 module.exports = LHTLogger;
