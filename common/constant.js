@@ -49,7 +49,15 @@ const httpConstants = {
     ADD_PRODUCT : '/add-product',
     UPDATE_PRODUCT : '/update-product/:id',
     GET_LIST_PRODUCTS : '/get-list-products/:id',
-    GET_PRODUCT_DETAILS : '/get-product-details/:id'
+    GET_PRODUCT_DETAILS : '/get-product-details/:id',
+
+    // for Cart endpoints 
+
+    ADD_PRODUCT_TO_CART : '/add-product-to-cart',
+    GET_CART_DETAILS : '/get-cart-details/:userID',
+    UPDATE_CART_DETAILS : '/update-cart-details/:userID/:productID',
+    REMOVE_CART_ITEM : '/remove-cart-details/:userID/:productID',
+
   };
   const apiSuccessMessage = {
     FETCH_SUCCESS:"Data Fetched Successfully",

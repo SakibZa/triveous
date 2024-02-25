@@ -14,4 +14,9 @@ router.use('/category', require('./category'));
 
 router.use('/product', require('./product'));
 
+/*Routes for Cart */
+
+router.use('/cart', require('./cart'));
+
+
 module.exports = router;
