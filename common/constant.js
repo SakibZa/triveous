@@ -44,6 +44,12 @@ const httpConstants = {
     GET_LIST_CATEGORTIES : '/get-list-categories',
     UPDATE_CATEGORY :'/update-category/:id',
 
+    //for products endpoints
+
+    ADD_PRODUCT : '/add-product',
+    UPDATE_PRODUCT : '/update-product/:id',
+    GET_LIST_PRODUCTS : '/get-list-products/:id',
+    GET_PRODUCT_DETAILS : '/get-product-details/:id'
   };
   const apiSuccessMessage = {
     FETCH_SUCCESS:"Data Fetched Successfully",

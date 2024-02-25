@@ -43,15 +43,40 @@ connection.connect((err) => {
             description TEXT
         )
         `
+        ,
+        `
+        CREATE TABLE IF NOT EXISTS products (
+          id INT AUTO_INCREMENT PRIMARY KEY,
+          title VARCHAR(255) NOT NULL,
+          price DECIMAL(10, 2) NOT NULL,
+          description TEXT,
+          availability BOOLEAN NOT NULL DEFAULT true,
+          category_id INT NOT NULL,
+          created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+          updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+          FOREIGN KEY (category_id) REFERENCES categories(id)
+      );
+        `
+        ,
+        `
+        CREATE TABLE IF NOT EXISTS cart (
+          id INT AUTO_INCREMENT PRIMARY KEY,
+          user_id INT NOT NULL,
+          product_id INT NOT NULL,
+          quantity INT NOT NULL DEFAULT 1,
+          created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+          updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+          FOREIGN KEY (user_id) REFERENCES users(id),
+          FOREIGN KEY (product_id) REFERENCES products(id)
+      );
+        `
     ];
 
     createTablesQueries.forEach(query => {
         connection.query(query, (err, results) => {
             if (err) {
                 LHTLogger.error("error creating table", err, {}, "Sakib Husain Zaidi");
-            } else {
-                LHTLogger.info("table created", '', {}, "Sakib Husain Zaidi");
-            }
+            } 
         });
     });
 });
